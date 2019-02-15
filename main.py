@@ -26,7 +26,8 @@ try:
         print(time)
         TIME = str(time.year)+str(time.month)+str(time.day)+'_'+str(time.hour)+'.'+str(time.minute)+'.'+str(time.second)
         print(type(time.year))
-        
+        TIME_PATH = str(time.year)+ '/' + str(time.month)+ '/' +str(time.day)
+
         #www.naver.com의 html을 parsing
         html = requests.get('https://www.naver.com').text
         soup = BeautifulSoup(html, 'html.parser')
@@ -43,10 +44,11 @@ try:
             df = pd.DataFrame(df_basic)
 
             #해당 디렉토리가 존재하지 않을 때 디렉토리 생성
-            if not(os.path.isdir('path + '/' + 'str(time.year)' + '/' + 'str(time.month)' + '/' + 'str(time.day)' + '/'')):
-                os.makedirs(os.path.join('path + '/' + str(time.year) + '/' + str(time.month)+ '/' + str(time.day) + '/''))
+            if not(os.path.isdir(path + '/' + TIME_PATH + '/')):
+                print(False)
+                os.makedirs(os.path.join(path + '/' + TIME_PATH + '/'))
 
-            df.to_csv(path + '/' + str(time.year) + '/' + str(time.month)+ '/' + str(time.day) + '/' + TIME + ".csv", index = False)
+            df.to_csv(path + '/' + TIME_PATH + '/' + TIME + ".csv", index = False)
             print(df)
         else :
             print('pass')
