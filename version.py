@@ -1,3 +1,4 @@
+# version 2.0 조건 django 서버와 연동
 # version a.b.c.d
 # a - 큰 기능이 추가될 때 변경
 # b - main.py가 변경될 때 변경
@@ -10,4 +11,4 @@
 # version - delta -> 현재 시간 출력
 # version - epsilon -> 현재시각 파일이름 저장
 # version - zeta -> 기본적인 기능 모두 구현 -> version 1.0.0
-# version 2.0 조건 django 서버와 연동
+# version - 1.1.0.0 -> 저장데이터를 년/월/일로 구분 추후에 하나로 통합할 수 있음
