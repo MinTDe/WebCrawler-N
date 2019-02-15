@@ -1,3 +1,8 @@
+# version a.b.c.d
+# a - 큰 기능이 추가될 때 변경
+# b - main.py가 변경될 때 변경
+# c - django가 변경될 때 변경
+# d - 봇이 변경될 때 변경
 # version
 # version - alpha -> 검색어 crawler 기능 추가
 # version - beta -> 검색어 csv로 저장
