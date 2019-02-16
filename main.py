@@ -25,7 +25,7 @@ try:
         print('------------------------------------------------------------------------------------------------------------------')
         print(time)
         TIME = str(time.year)+str(time.month)+str(time.day)+'_'+str(time.hour)+'.'+str(time.minute)+'.'+str(time.second)
-        print(type(time.year))
+        # 디렉토리 지정
         TIME_PATH = str(time.year)+ '/' + str(time.month)+ '/' +str(time.day)
 
         #www.naver.com의 html을 parsing
@@ -37,6 +37,7 @@ try:
         for idx,title in enumerate(title_list, 0):
             df_topic[idx] = title.text
 
+        # 급상승 검색어 순위가 바뀌면 작동
         if ori_df_topic != df_topic:
             print('Change ranking')
             ori_df_topic = df_topic[:]
@@ -48,16 +49,21 @@ try:
                 print(False)
                 os.makedirs(os.path.join(path + '/' + TIME_PATH + '/'))
 
+            #csv확장자로 파일 저장
             df.to_csv(path + '/' + TIME_PATH + '/' + TIME + ".csv", index = False)
             print(df)
+
+        # 테스트 확인용
         else :
             print('pass')
 
+        #추후에 변화되면 상승시 빨간색 하강시 파란색으로 출력 예정
         print('sec - ori : ', ori_df_topic)
         print('sec - df : ', df_topic)
         print(ori_df_topic == df_topic)
         #for j in range(20):
         #print('Ranking : %2s - df_topic : %-30s %-10s : %30s' %(df_ranking[j],df_topic[j],'-ori_df_topic',ori_df_topic[j]))
         sleep(300)
+#Ctrl + C를 누르면 프로그램 중지
 except KeyboardInterrupt:
     pass
