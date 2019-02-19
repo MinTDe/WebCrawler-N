@@ -63,7 +63,7 @@ try:
         print(ori_df_topic == df_topic)
         #for j in range(20):
         #print('Ranking : %2s - df_topic : %-30s %-10s : %30s' %(df_ranking[j],df_topic[j],'-ori_df_topic',ori_df_topic[j]))
-        sleep(300)
+        sleep(5)
 #Ctrl + C를 누르면 프로그램 중지
 except KeyboardInterrupt:
     pass
